@@ -230,7 +230,7 @@ function generateRandomItem(item) {
     case "Rare":
       result = getRandomValueFromArray(RI);
       break;
-    case "Vrare":
+    case "Very Rare":
       result = getRandomValueFromArray(VI);
       break;
   }
