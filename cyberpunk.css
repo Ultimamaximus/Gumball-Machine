@@ -1070,15 +1070,16 @@ label
 
 @media only screen and (max-width: 600px) {
     :root {
-         --input-width: 50%;
-         --input-font-size: 1.15rem;
+         --input-width: 55%;
+         --input-font-size: .7rem;
     }
 
     h1.cyber-h {
         padding-left: 0;
+        font-size: 2.7rem;
     }
   
     .cyber-input-heading {
-        margin-left: 0;
+        margin-left: 1.5rem;
     }
   }

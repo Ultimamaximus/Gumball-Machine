@@ -78,7 +78,14 @@
   }
   
   @media only screen and (max-width: 600px) {
+    
+    .addBtn {
+      width: 40%;
+      margin-left: 5.5rem;
+      margin-top: 1rem;
+    }
+    
     ul li {
-      padding-left: 40px;
+      padding-left: 30px;
     }
   }
