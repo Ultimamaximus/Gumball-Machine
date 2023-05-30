@@ -4,7 +4,6 @@
 /* Include the padding and border in an element's total width and height */
 * {
     box-sizing: border-box;
-    font-family: 'Playfair Display', serif;
   }
   
   /* Removes margins and padding from the list */
@@ -18,9 +17,10 @@
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #eee;
-    font-size: 18px;
+    padding-left: 110px;
+    font-size: 28px;
     transition: 0.2s;
+    
   
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -29,17 +29,15 @@
     user-select: none;
   }
   
+  
+
   /* Set all odd list items to a different color*/
   ul li:nth-child(odd) {
-    background: #f9f9f9;
   }
   
   /* Styles the header */
   .header {
-    background-color: #201e1e;
     padding: 30px 40px;
-    color: white;
-    text-align: center;
   }
   
   /* Clear floats after the header */
@@ -56,8 +54,9 @@
     border-radius: 0;
     width: 75%;
     padding: 10px;
+    padding-left: 20px;
     float: left;
-    font-size: 16px;
+    font-size: 23px;
     border-top-left-radius: 25px 50%;
     border-bottom-left-radius: 25px 50%;
     outline: 0px;
@@ -65,10 +64,9 @@
   
   /* Styles the "Add" button */
   .addBtn {
-    padding: 10px;
+    padding: 15px;
+    margin-left: 8rem;
     width: 25%;
-    background: #d9d9d9;
-    color: #555;
     float: left;
     text-align: center;
     font-size: 16px;
@@ -79,3 +77,8 @@
     border-bottom-right-radius: 25px 50%;
   }
   
+  @media only screen and (max-width: 600px) {
+    ul li {
+      padding-left: 40px;
+    }
+  }
