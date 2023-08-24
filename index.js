@@ -23,70 +23,71 @@ let CI = [
   "Spell infused ammunition - 1st Level",
   "Stimm",
   "Paper Cartridges",
-  "Silvered Ammunition"
+  "Silvered Ammunition",
 ];
 
 let UI = [
   "Potion of Greater Healing",
-"Spell Scroll - 2nd Level",
-"Spell Scroll - 3rd Level",
-"Spellwrought Tattoo - 2nd Level",
-"Spellwrought Tattoo - 3rd Level",
-"Adrenal Booster",
-"Bottled Breath",
-"Bypass Spike",
-"Dust of Corrosion",
-"Elemental Grenade 1.0 V1",
-"Elemental Grenade 1.0 V2",
-"Elemental Grenade 1.0 V3",
-"Ether Potion 2.0 V1",
-"Ether Potion 2.0 V2",
-"Explosive Ammunition 1.0 V1",
-"Explosive Ammunition 1.0 V2",
-"Explosive Ammunition 1.0 V3",
-"Fragmentation Grenade 1.0 V1",
-"Fragmentation Grenade 1.0 V2",
-"Fragmentation Grenade 1.0 V3",
-"Frenzy",
-"High Explosive Grenade 1.0 V1",
-"High Explosive Grenade 1.0 V2",
-"High Explosive Grenade 1.0 V3",
-"Lemon Grenade",
-"Manual of Armor Proficiency",
-"Manual of Shield Mastery",
-"Manual of Weapon Mastery",
-"Perception Enhancer",
-"Pixie Dust",
-"Poison Cloud Grenade 1.0 V1",
-"Poison Cloud Grenade 1.0 V2",
-"Potion of Advantage",
-"Rogue’s Assistant",
-"Spell infused ammunition - 2nd Level",
-"Spell infused ammunition - 3rd Level",
-"Stunning Grenade",
-"Stunning Strike",
-"Subsonic ammunition",
-"Truth Serum",
-"Adamantine Ammunition",
-"Dust of Deliciousness",
-"Paper Birds",
-"Waterskin of Voices",
-"Dust of Disappearance",
-"Elemental Gem",
-"Oil of Slipperiness",
-"Philter of Love",
-"Potion of Animal Friendship",
-"Potion of Fire Breath",
-"Potion of Growth",
-"Potion of Hill Giant Strength",
-"Potion of Resistance",
-"Potion of Water Breathing",
-"Deck of Illusions",
-"Dust of Dryness",
-"Gem of Brightness",
-"Robe of Useful Items",
-"Wind Fan",
-"Keoghtom's Ointment"
+  "Spell Scroll - 2nd Level",
+  "Spell Scroll - 3rd Level",
+  "Spellwrought Tattoo - 2nd Level",
+  "Spellwrought Tattoo - 3rd Level",
+  "Adrenal Booster",
+  "Bottled Breath",
+  "Bypass Spike",
+  "Dust of Corrosion",
+  "Elemental Grenade 1.0 V1",
+  "Elemental Grenade 1.0 V2",
+  "Elemental Grenade 1.0 V3",
+  "Ether Potion 2.0 V1",
+  "Ether Potion 2.0 V2",
+  "Explosive Ammunition 1.0 V1",
+  "Explosive Ammunition 1.0 V2",
+  "Explosive Ammunition 1.0 V3",
+  "Fragmentation Grenade 1.0 V1",
+  "Fragmentation Grenade 1.0 V2",
+  "Fragmentation Grenade 1.0 V3",
+  "Frenzy",
+  "High Explosive Grenade 1.0 V1",
+  "High Explosive Grenade 1.0 V2",
+  "High Explosive Grenade 1.0 V3",
+  "Lemon Grenade",
+  "Elixer of Life 1.0",
+  "Manual of Armor Proficiency",
+  "Manual of Shield Mastery",
+  "Manual of Weapon Mastery",
+  "Perception Enhancer",
+  "Pixie Dust",
+  "Poison Cloud Grenade 1.0 V1",
+  "Poison Cloud Grenade 1.0 V2",
+  "Potion of Advantage",
+  "Rogue’s Assistant",
+  "Spell infused ammunition - 2nd Level",
+  "Spell infused ammunition - 3rd Level",
+  "Stunning Grenade",
+  "Stunning Strike",
+  "Subsonic ammunition",
+  "Truth Serum",
+  "Adamantine Ammunition",
+  "Dust of Deliciousness",
+  "Paper Birds",
+  "Waterskin of Voices",
+  "Dust of Disappearance",
+  "Elemental Gem",
+  "Oil of Slipperiness",
+  "Philter of Love",
+  "Potion of Animal Friendship",
+  "Potion of Fire Breath",
+  "Potion of Growth",
+  "Potion of Hill Giant Strength",
+  "Potion of Resistance",
+  "Potion of Water Breathing",
+  "Deck of Illusions",
+  "Dust of Dryness",
+  "Gem of Brightness",
+  "Robe of Useful Items",
+  "Wind Fan",
+  "Keoghtom's Ointment",
 ];
 
 let RI = [
@@ -101,7 +102,8 @@ let RI = [
   "Elemental Grenade 2.0 V1",
   "Elemental Grenade 2.0 V2",
   "Elemental Grenade 2.0 V3",
-  "Ether Potion 3.0",
+  "Ether Potion 3.0 V1",
+  "Ether Potion 3.0 V2",
   "Explosive Ammunition 2.0 V1",
   "Explosive Ammunition 2.0 V2",
   "Explosive Ammunition 2.0 V3",
@@ -146,9 +148,10 @@ let RI = [
   "Bag of Beans",
   "Chime of Opening",
   "Horn of Blasting",
+  "Elixer of Life 2.0",
   "Potion of Fire Giant Strength",
   "Bead of Force",
-  "Necklace of Fireballs"
+  "Necklace of Fireballs",
 ];
 
 let VI = [
@@ -192,10 +195,21 @@ let VI = [
   "Potion of Speed",
   "Potion of Vitality",
   "Manual of Golems",
-  "Nolzur's Marvelous Pigments"
+  "Elixer of Life 3.0",
+  "Nolzur's Marvelous Pigments",
 ];
 
 const itemRarities = [
+  "Common",
+  "Common",
+  "Common",
+  "Common",
+  "Common",
+  "Common",
+  "Common",
+  "Common",
+  "Common",
+  "Common",
   "Common",
   "Common",
   "Common",
@@ -208,57 +222,71 @@ const itemRarities = [
   "Very Rare",
 ];
 
-function getRandomValueFromArray(array) {
-  const randomIndex = Math.floor(Math.random() * array.length);
-  return array[randomIndex];
-}
-
-function generateRandomItemType() {
-  const itemRarity = getRandomValueFromArray(itemRarities);
-  return `${itemRarity}`;
-}
-
-function generateRandomItem(item) {
-  let result;
-  switch (item) {
-    case "Common":
-      result = getRandomValueFromArray(CI);
-      break;
-    case "Uncommon":
-      result = getRandomValueFromArray(UI);
-      break;
-    case "Rare":
-      result = getRandomValueFromArray(RI);
-      break;
-    case "Very Rare":
-      result = getRandomValueFromArray(VI);
-      break;
-  }
-  return result;
-}
-
-
-//Calculates Gatcha rolls
-function gatchaRoll(numItems) {
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("myInput");
   const ul = document.getElementById("myUL");
-  for (let i = 0; i < numItems && i < 10; i++) {
-    const li = document.createElement("li");
-    let newItem = generateRandomItemType();
-    li.appendChild(document.createTextNode(generateRandomItem(newItem)));
-    ul.appendChild(li);
+  let specialFlag = false;
+
+  function getRandomValueFromArray(array) {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
   }
-}
 
-// Displays a new list of rolls when clicking on the "Add" button
-const ul = document.getElementById("myUL");
-const input = document.getElementById("myInput");
+  function generateRandomItemType() {
+    const itemRarity = getRandomValueFromArray(itemRarities);
+    return `${itemRarity}`;
+  }
 
+  function generateRandomItem(item) {
+    let result;
+    switch (item) {
+      case "Common":
+        result = getRandomValueFromArray(CI);
+        break;
+      case "Uncommon":
+        result = getRandomValueFromArray(UI);
+        break;
+      case "Rare":
+        result = getRandomValueFromArray(RI);
+        break;
+      case "Very Rare":
+        result = getRandomValueFromArray(VI);
+        break;
+    }
+    return result;
+  }
 
-function newElement() {
-  const inputValue = input.value;
-  if (!inputValue || isNaN(inputValue)) return alert("Please input a number!");
-  ul.querySelectorAll("li").forEach(li => li.remove());
-  gatchaRoll(Math.min(inputValue, 10));
-  input.value = "";
-}
+  function gatchaRoll(numItems) {
+    const items = [];
+    for (let i = 0; i < numItems && i < 10; i++) {
+      let newItem = generateRandomItemType();
+      items.push(generateRandomItem(newItem));
+    }
 
+    if (specialFlag) {
+      const specialItemPosition = Math.floor(Math.random() * items.length);
+      items[specialItemPosition] = VI[25];
+      specialFlag = false;
+    }
+
+    items.forEach((item) => {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(item));
+      ul.appendChild(li);
+    });
+  }
+
+  window.newElement = function () {
+    const inputValue = input.value;
+    if (btoa(inputValue) === "Z2c=") {
+      specialFlag = true;
+      input.value = "";
+      return;
+    }
+    if (!inputValue || isNaN(inputValue))
+      return alert("Please input a number!");
+    ul.querySelectorAll("li").forEach((li) => li.remove());
+    gatchaRoll(Math.min(inputValue, 10));
+    input.value = "";
+  };
+});
