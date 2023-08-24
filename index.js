@@ -226,67 +226,85 @@ document.addEventListener("DOMContentLoaded", function () {
   const input = document.getElementById("myInput");
   const ul = document.getElementById("myUL");
   let specialFlag = false;
+  let unlimitedRollsLeft = 0;  
 
   function getRandomValueFromArray(array) {
-    const randomIndex = Math.floor(Math.random() * array.length);
-    return array[randomIndex];
+      const randomIndex = Math.floor(Math.random() * array.length);
+      return array[randomIndex];
   }
 
   function generateRandomItemType() {
-    const itemRarity = getRandomValueFromArray(itemRarities);
-    return `${itemRarity}`;
+      const itemRarity = getRandomValueFromArray(itemRarities);
+      return `${itemRarity}`;
   }
 
   function generateRandomItem(item) {
-    let result;
-    switch (item) {
-      case "Common":
-        result = getRandomValueFromArray(CI);
-        break;
-      case "Uncommon":
-        result = getRandomValueFromArray(UI);
-        break;
-      case "Rare":
-        result = getRandomValueFromArray(RI);
-        break;
-      case "Very Rare":
-        result = getRandomValueFromArray(VI);
-        break;
-    }
-    return result;
+      let result;
+      switch (item) {
+          case "Common":
+              result = getRandomValueFromArray(CI);
+              break;
+          case "Uncommon":
+              result = getRandomValueFromArray(UI);
+              break;
+          case "Rare":
+              result = getRandomValueFromArray(RI);
+              break;
+          case "Very Rare":
+              result = getRandomValueFromArray(VI);
+              break;
+      }
+      return result;
   }
 
   function gatchaRoll(numItems) {
-    const items = [];
-    for (let i = 0; i < numItems && i < 10; i++) {
-      let newItem = generateRandomItemType();
-      items.push(generateRandomItem(newItem));
-    }
+      const items = [];
+      let maxItems = unlimitedRollsLeft > 0 ? numItems : Math.min(numItems, 10);
+      
+      for (let i = 0; i < maxItems; i++) {
+          let newItem = generateRandomItemType();
+          items.push(generateRandomItem(newItem));
+      }
 
-    if (specialFlag) {
-      const specialItemPosition = Math.floor(Math.random() * items.length);
-      items[specialItemPosition] = VI[25];
-      specialFlag = false;
-    }
+      if (specialFlag) {
+          const specialItemPosition = Math.floor(Math.random() * items.length);
+          items[specialItemPosition] = VI[25];
+          specialFlag = false;
+      }
 
-    items.forEach((item) => {
-      const li = document.createElement("li");
-      li.appendChild(document.createTextNode(item));
-      ul.appendChild(li);
-    });
+      items.forEach((item) => {
+          const li = document.createElement("li");
+          li.appendChild(document.createTextNode(item));
+          ul.appendChild(li);
+      });
+
+      if (unlimitedRollsLeft > 0) {
+          unlimitedRollsLeft--;  
+      }
   }
 
   window.newElement = function () {
-    const inputValue = input.value;
-    if (btoa(inputValue) === "Z2c=") {
-      specialFlag = true;
+      const inputValue = input.value;
+
+
+      if (inputValue === "dm") {
+          unlimitedRollsLeft = 5;
+          input.value = "";
+          alert("DM mode enabled! Unlimited roll cap activated for next 5 rolls!");
+          return;
+      }
+
+      if (btoa(inputValue) === "Z2c=") {
+          specialFlag = true;
+          input.value = "";
+          return;
+      }
+
+      if (!inputValue || isNaN(inputValue))
+          return alert("Please input a number!");
+
+      ul.querySelectorAll("li").forEach((li) => li.remove());
+      gatchaRoll(inputValue);
       input.value = "";
-      return;
-    }
-    if (!inputValue || isNaN(inputValue))
-      return alert("Please input a number!");
-    ul.querySelectorAll("li").forEach((li) => li.remove());
-    gatchaRoll(Math.min(inputValue, 10));
-    input.value = "";
   };
 });
