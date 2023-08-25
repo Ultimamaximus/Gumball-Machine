@@ -323,8 +323,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (inputValue === "VIP") {
             ul.querySelectorAll("li").forEach((li) => li.remove());
+            
+            // Create an array of arrays
+            const vipArrays = [UI, UI, UI, UI, RI, RI, RI, VI, VI, LI];
+            
+            // Choose a random array from vipArrays
+            const selectedArray = getRandomValueFromArray(vipArrays);
+        
+            // Choose a random item from the selected array
+            const selectedItem = getRandomValueFromArray(selectedArray);
+        
             const li = document.createElement("li");
-            li.appendChild(document.createTextNode(generateRandomItemFromLI()));
+            li.appendChild(document.createTextNode(selectedItem));
             ul.appendChild(li);
             input.value = "";
             return;
