@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ul.querySelectorAll("li").forEach((li) => li.remove());
             
             // Create an array of arrays
-            const vipArrays = [UI, UI, UI, UI, RI, RI, RI, VI, VI, LI];
+            const vipArrays = [ RI, RI, RI, VI, VI, LI];
             
             // Choose a random array from vipArrays
             const selectedArray = getRandomValueFromArray(vipArrays);
