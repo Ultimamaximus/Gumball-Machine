@@ -199,6 +199,30 @@ let VI = [
   "Nolzur's Marvelous Pigments",
 ];
 
+let LI = [
+    "Spell Scroll - 9th Level",
+    "Spellwrought Tattoo - 9th Level",
+    "Ioun Stone, Greater Absorption",
+    "Scarab of Protection",
+    "Potion of Dragon's Majesty",
+    "Potion of Giant Size",
+    "Rejuvenate",
+    "Scroll of the Comet",
+    "Scroll of Saving Throws",
+    "Spell infused ammunition - 9th Level",
+    "Potion of Storm Giant Strength",
+    "Sovereign Glue",
+    "Universal Solvent",
+    "Manual of Bodily Health",
+    "Manual of Gainful Exercise",
+    "Manual of Quickness of Action",
+    "Tome of Clear Thought",
+    "Tome of Leadership and Influence",
+    "Tome of Understanding",
+    "Ring of Three Wishes"
+]
+
+
 const itemRarities = [
   "Common",
   "Common",
@@ -223,88 +247,100 @@ const itemRarities = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-  const input = document.getElementById("myInput");
-  const ul = document.getElementById("myUL");
-  let specialFlag = false;
-  let unlimitedRollsLeft = 0;  
+    const input = document.getElementById("myInput");
+    const ul = document.getElementById("myUL");
+    let specialFlag = false;
+    let unlimitedRollsLeft = 0;
 
-  function getRandomValueFromArray(array) {
-      const randomIndex = Math.floor(Math.random() * array.length);
-      return array[randomIndex];
-  }
+    function getRandomValueFromArray(array) {
+        const randomIndex = Math.floor(Math.random() * array.length);
+        return array[randomIndex];
+    }
 
-  function generateRandomItemType() {
-      const itemRarity = getRandomValueFromArray(itemRarities);
-      return `${itemRarity}`;
-  }
+    function generateRandomItemType() {
+        const itemRarity = getRandomValueFromArray(itemRarities);
+        return `${itemRarity}`;
+    }
 
-  function generateRandomItem(item) {
-      let result;
-      switch (item) {
-          case "Common":
-              result = getRandomValueFromArray(CI);
-              break;
-          case "Uncommon":
-              result = getRandomValueFromArray(UI);
-              break;
-          case "Rare":
-              result = getRandomValueFromArray(RI);
-              break;
-          case "Very Rare":
-              result = getRandomValueFromArray(VI);
-              break;
-      }
-      return result;
-  }
+    function generateRandomItem(item) {
+        let result;
+        switch (item) {
+            case "Common":
+                result = getRandomValueFromArray(CI);
+                break;
+            case "Uncommon":
+                result = getRandomValueFromArray(UI);
+                break;
+            case "Rare":
+                result = getRandomValueFromArray(RI);
+                break;
+            case "Very Rare":
+                result = getRandomValueFromArray(VI);
+                break;
+        }
+        return result;
+    }
 
-  function gatchaRoll(numItems) {
-      const items = [];
-      let maxItems = unlimitedRollsLeft > 0 ? numItems : Math.min(numItems, 10);
-      
-      for (let i = 0; i < maxItems; i++) {
-          let newItem = generateRandomItemType();
-          items.push(generateRandomItem(newItem));
-      }
+    function generateRandomItemFromLI() {
+        return getRandomValueFromArray(LI);
+    }
 
-      if (specialFlag) {
-          const specialItemPosition = Math.floor(Math.random() * items.length);
-          items[specialItemPosition] = VI[25];
-          specialFlag = false;
-      }
+    function gatchaRoll(numItems) {
+        const items = [];
+        let maxItems = unlimitedRollsLeft > 0 ? numItems : Math.min(numItems, 10);
+        
+        for (let i = 0; i < maxItems; i++) {
+            let newItem = generateRandomItemType();
+            items.push(generateRandomItem(newItem));
+        }
 
-      items.forEach((item) => {
-          const li = document.createElement("li");
-          li.appendChild(document.createTextNode(item));
-          ul.appendChild(li);
-      });
+        if (specialFlag) {
+            const specialItemPosition = Math.floor(Math.random() * items.length);
+            items[specialItemPosition] = VI[25];
+            specialFlag = false;
+        }
 
-      if (unlimitedRollsLeft > 0) {
-          unlimitedRollsLeft--;  
-      }
-  }
+        items.forEach((item) => {
+            const li = document.createElement("li");
+            li.appendChild(document.createTextNode(item));
+            ul.appendChild(li);
+        });
 
-  window.newElement = function () {
-      const inputValue = input.value;
+        if (unlimitedRollsLeft > 0) {
+            unlimitedRollsLeft--;  
+        }
+    }
 
+    window.newElement = function () {
+        const inputValue = input.value;
 
-      if (inputValue === "dm") {
-          unlimitedRollsLeft = 5;
-          input.value = "";
-          alert("DM mode enabled! Unlimited roll cap activated for next 5 rolls!");
-          return;
-      }
+        if (inputValue === "dm") {
+            unlimitedRollsLeft = 5;
+            input.value = "";
+            alert("DM mode enabled! Unlimited roll cap activated for next 5 rolls!");
+            return;
+        }
 
-      if (btoa(inputValue) === "Z2c=") {
-          specialFlag = true;
-          input.value = "";
-          return;
-      }
+        if (inputValue === "VIP") {
+            ul.querySelectorAll("li").forEach((li) => li.remove());
+            const li = document.createElement("li");
+            li.appendChild(document.createTextNode(generateRandomItemFromLI()));
+            ul.appendChild(li);
+            input.value = "";
+            return;
+        }
 
-      if (!inputValue || isNaN(inputValue))
-          return alert("Please input a number!");
+        if (btoa(inputValue) === "Z2c=") {
+            specialFlag = true;
+            input.value = "";
+            return;
+        }
 
-      ul.querySelectorAll("li").forEach((li) => li.remove());
-      gatchaRoll(inputValue);
-      input.value = "";
-  };
+        if (!inputValue || isNaN(inputValue))
+            return alert("Please input a number!");
+
+        ul.querySelectorAll("li").forEach((li) => li.remove());
+        gatchaRoll(inputValue);
+        input.value = "";
+    };
 });
