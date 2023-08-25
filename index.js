@@ -237,7 +237,7 @@ const itemRarities = [
   "Common",
   "Common",
   "Common",
-  "Common",
+  "Uncommon",
   "Uncommon",
   "Uncommon",
   "Uncommon",
