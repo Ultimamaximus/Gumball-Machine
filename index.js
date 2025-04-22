@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (specialFlag) {
             const specialItemPosition = Math.floor(Math.random() * items.length);
-            items[specialItemPosition] = VI[16];
+            items[specialItemPosition] = VI[14];
             specialFlag = false;
         }
 
